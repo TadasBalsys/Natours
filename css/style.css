@@ -1,12 +1,3 @@
-/* *,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
-
-html {
-  box-sizing: border-box;
-} */
 *,
 *::after,
 *::before {
@@ -35,49 +26,44 @@ body {
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   /* father element .header must have position:relative then children elements can use position: absolute */
   position: relative; }
-
-.header__logo-box {
-  position: absolute;
-  top: 4rem;
-  left: 4rem; }
-
-.header__logo {
-  height: 3.5rem; }
-
-.header__text-box {
-  /* this css rules place heading-box element in center */
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  /* without this transform: translate(-50%, -50%); property heading-box element start point will be ant the center of screen. To make heading-box element center in the center of the screen must use this property */
-  transform: translate(-50%, -50%);
-  text-align: center; }
+  .header__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    height: 3.5rem; }
+  .header__text-box {
+    /* this css rules place heading-box element in center */
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    /* without this transform: translate(-50%, -50%); property heading-box element start point will be ant the center of screen. To make heading-box element center in the center of the screen must use this property */
+    transform: translate(-50%, -50%);
+    text-align: center; }
 
 .heading-primary {
   color: #fff;
   text-transform: uppercase;
   margin-bottom: 6rem;
   backface-visibility: hidden; }
-
-.heading-primary--main {
-  /* span element origin is inline element. display: block; makes span element block element */
-  display: block;
-  font-size: 6rem;
-  font-weight: 400;
-  letter-spacing: 3.5rem;
-  /* animation-name: moveInLeft;
-  animation-duration: 1s;
-  animation-timing-function: ease-in; 
-    OR
-  */
-  animation: moveInLeft 1s ease-in; }
-
-.heading-primary--sub {
-  display: block;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 1.75rem;
-  animation: moveInRight 1s ease-in; }
+  .heading-primary--main {
+    /* span element origin is inline element. display: block; makes span element block element */
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    /* animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-in; 
+      OR
+    */
+    animation: moveInLeft 1s ease-in; }
+  .heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.75rem;
+    animation: moveInRight 1s ease-in; }
 
 /* Declared animations moveInLeft and moveInRight and then used it in heading-primary-main and .heading-primary-sub */
 @keyframes moveInLeft {
@@ -110,8 +96,7 @@ body {
     opacity: 1;
     transform: translateY(0); } }
 
-.btn:link,
-.btn:visited {
+.btn:link, .btn:visited {
   display: inline-block;
   text-transform: uppercase;
   text-decoration: none;
@@ -124,6 +109,9 @@ body {
 .btn:hover {
   transform: translateY(-0.3rem);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+  .btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0; }
 
 .btn:active {
   transform: translateY(-0.1rem);
@@ -132,6 +120,8 @@ body {
 .btn--white {
   background-color: #fff;
   color: #777; }
+  .btn--white::after {
+    background-color: #fff; }
 
 .btn::after {
   content: '';
@@ -144,13 +134,6 @@ body {
   left: 0;
   z-index: -1;
   transition: all 0.4s; }
-
-.btn--white::after {
-  background-color: #fff; }
-
-.btn:hover::after {
-  transform: scaleX(1.4) scaleY(1.6);
-  opacity: 0; }
 
 .btn--animated {
   animation: moveInBottom 0.5s ease-out 0.75s;

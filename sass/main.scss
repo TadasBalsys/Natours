@@ -3,16 +3,7 @@ $color-primary: #55c57a;
 $color-primary-dark: #28b485;
 $color-grey-dark: #777;
 $color-white: #fff;
-
-/* *,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
-
-html {
-  box-sizing: border-box;
-} */
+$color-black: #000;
 
 *,
 *::after,
@@ -50,26 +41,25 @@ body {
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   /* father element .header must have position:relative then children elements can use position: absolute */
   position: relative;
-}
 
-.header__logo-box {
-  position: absolute;
-  top: 4rem;
-  left: 4rem;
-}
+  &__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+  }
+  &__logo {
+    height: 3.5rem;
+  }
 
-.header__logo {
-  height: 3.5rem;
-}
-
-.header__text-box {
-  /* this css rules place heading-box element in center */
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  /* without this transform: translate(-50%, -50%); property heading-box element start point will be ant the center of screen. To make heading-box element center in the center of the screen must use this property */
-  transform: translate(-50%, -50%);
-  text-align: center;
+  &__text-box {
+    /* this css rules place heading-box element in center */
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    /* without this transform: translate(-50%, -50%); property heading-box element start point will be ant the center of screen. To make heading-box element center in the center of the screen must use this property */
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
 }
 
 .heading-primary {
@@ -77,28 +67,28 @@ body {
   text-transform: uppercase;
   margin-bottom: 6rem;
   backface-visibility: hidden;
-}
-.heading-primary--main {
-  /* span element origin is inline element. display: block; makes span element block element */
-  display: block;
-  font-size: 6rem;
-  font-weight: 400;
-  letter-spacing: 3.5rem;
+  &--main {
+    /* span element origin is inline element. display: block; makes span element block element */
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
 
-  /* animation-name: moveInLeft;
-  animation-duration: 1s;
-  animation-timing-function: ease-in; 
-    OR
-  */
-  animation: moveInLeft 1s ease-in;
-}
-.heading-primary--sub {
-  display: block;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 1.75rem;
+    /* animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-in; 
+      OR
+    */
+    animation: moveInLeft 1s ease-in;
+  }
+  &--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.75rem;
 
-  animation: moveInRight 1s ease-in;
+    animation: moveInRight 1s ease-in;
+  }
 }
 
 /* Declared animations moveInLeft and moveInRight and then used it in heading-primary-main and .heading-primary-sub */
@@ -144,56 +134,57 @@ body {
   }
 }
 
-.btn:link,
-.btn:visited {
-  display: inline-block;
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 1.5rem 4rem;
-  border-radius: 10rem;
-  transition: all 0.2s;
-  position: relative;
-  font-size: 1.6rem;
-}
+.btn {
+  &:link,
+  &:visited {
+    display: inline-block;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    border-radius: 10rem;
+    transition: all 0.2s;
+    position: relative;
+    font-size: 1.6rem;
+  }
+  &:hover {
+    transform: translateY(-0.3rem);
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
 
-.btn:hover {
-  transform: translateY(-0.3rem);
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
-}
+    &::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+    }
+  }
 
-.btn:active {
-  transform: translateY(-0.1rem);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
-}
+  &:active {
+    transform: translateY(-0.1rem);
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+  }
 
-.btn--white {
-  background-color: $color-white;
-  color: $color-grey-dark;
-}
+  &--white {
+    background-color: $color-white;
+    color: $color-grey-dark;
+    
+    &::after {
+      background-color: $color-white;
+    }
+  }
 
-.btn::after {
-  content: '';
-  display: inline-block;
-  height: 100%;
-  width: 100%;
-  border-radius: 10rem;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  transition: all 0.4s;
-}
+  &::after {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s;
+  }
 
-.btn--white::after {
-  background-color: $color-white;
-}
-
-.btn:hover::after {
-  transform: scaleX(1.4) scaleY(1.6);
-  opacity: 0;
-}
-
-.btn--animated {
-  animation: moveInBottom 0.5s ease-out 0.75s;
-  animation-fill-mode: backwards;
+  &--animated {
+    animation: moveInBottom 0.5s ease-out 0.75s;
+    animation-fill-mode: backwards;
+  }
 }

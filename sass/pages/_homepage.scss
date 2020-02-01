@@ -3,3 +3,23 @@
   padding: 25rem 0;
   margin-top: -25vh;
 }
+
+.section_features {
+  padding: 20rem 0;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)
+    ),
+    url(../img/nat-4.jpg);
+  background-size: cover;
+  // skews element
+  transform: skewY(-6deg);
+  margin-top: -14rem;
+
+  // this selector selects direct child's of section_features (selects div.row, but not the child's of div.row)
+  & > * {
+    // skews div.row back to horizontal position.
+    transform: skewY(6deg);
+  }
+}

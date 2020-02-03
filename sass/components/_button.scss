@@ -1,4 +1,6 @@
 .btn {
+  // & selector select all btn elements, e.x. selects button element. Without &, styles below only will be applied to <a> element (because of the :link, :visited pseudo classes selectors)
+  &,
   &:link,
   &:visited {
     display: inline-block;
@@ -9,6 +11,9 @@
     transition: all 0.2s;
     position: relative;
     font-size: $default-font-size;
+    //Change for the button element
+    border: none;
+    cursor: pointer;
   }
   &:hover {
     transform: translateY(-0.3rem);
@@ -20,14 +25,16 @@
     }
   }
 
-  &:active {
+  &:active,
+  &:focus {
+    outline: none;
     transform: translateY(-0.1rem);
     box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
   }
 
   &--white {
     background-color: $color-white;
-    color: $color-grey-dark;
+    color: $color-grey-dark-1;
 
     &::after {
       background-color: $color-white;
@@ -37,7 +44,7 @@
   &--green {
     background-color: $color-primary;
     color: $color-grey-light-1;
- 
+
     &::after {
       background-color: $color-primary;
     }
@@ -71,7 +78,7 @@
     text-decoration: none;
     border-bottom: 1px solid $color-primary;
     padding: 3px;
-    transition: all .2s;
+    transition: all 0.2s;
   }
 
   &:hover {

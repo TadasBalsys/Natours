@@ -454,6 +454,31 @@ body {
 .form__radio-input:checked + .form__radio-label .form__radio-bottom:after {
   opacity: 1; }
 
+.header {
+  height: 95vh;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
+  background-size: cover;
+  background-position: top;
+  /* clip-path: polygon(50% 0, 50% 0, 100% 100%, 0 100%); */
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  /* father element .header must have position:relative then children elements can use position: absolute */
+  position: relative; }
+  .header__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    height: 3.5rem; }
+  .header__text-box {
+    /* this css rules place heading-box element in center */
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    /* without this transform: translate(-50%, -50%); property heading-box element start point will be ant the center of screen. To make heading-box element center in the center of the screen must use this property */
+    transform: translate(-50%, -50%);
+    text-align: center; }
+
 .row {
   max-width: 114rem;
   margin: 0 auto; }
@@ -480,30 +505,43 @@ body {
   .row .col-3-of-4 {
     width: calc(((100% - 3 * 6rem) / 4) * 3 + 2 * 6rem); }
 
-.header {
-  height: 95vh;
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
-  background-size: cover;
-  background-position: top;
-  /* clip-path: polygon(50% 0, 50% 0, 100% 100%, 0 100%); */
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-  /* father element .header must have position:relative then children elements can use position: absolute */
-  position: relative; }
-  .header__logo-box {
-    position: absolute;
-    top: 4rem;
-    left: 4rem; }
-  .header__logo {
-    height: 3.5rem; }
-  .header__text-box {
-    /* this css rules place heading-box element in center */
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    /* without this transform: translate(-50%, -50%); property heading-box element start point will be ant the center of screen. To make heading-box element center in the center of the screen must use this property */
-    transform: translate(-50%, -50%);
-    text-align: center; }
+.footer {
+  background-color: #333;
+  padding: 8rem 0;
+  font-size: 1.4rem;
+  color: #f7f7f7; }
+  .footer__logo-box {
+    text-align: center;
+    margin-bottom: 8rem; }
+  .footer__logo {
+    width: 15rem;
+    height: auto; }
+  .footer__nav {
+    border-top: 1px solid #777;
+    padding-top: 2rem;
+    display: inline-block; }
+  .footer__list {
+    list-style: none; }
+  .footer__item {
+    display: inline-block; }
+    .footer__item:not(:last-child) {
+      margin-right: 1.5rem; }
+  .footer__link:link, .footer__link:visited {
+    color: #f7f7f7;
+    background-color: #333;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.2s; }
+  .footer__link:hover, .footer__link:active {
+    color: #55c57a;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
+    transform: rotate(5deg) scale(1.3); }
+  .footer__credits {
+    border-top: 1px solid #777;
+    display: block;
+    width: 80%;
+    padding-top: 2rem;
+    float: right; }
 
 .section-about {
   background-color: #f7f7f7;

@@ -160,10 +160,7 @@
 
   //Card back side style
   &__cta {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    @include center-vertical-horizontal;
     width: 90%;
     text-align: center;
   }
@@ -182,5 +179,4 @@
     font-size: 6rem;
     font-weight: 100;
   }
-
 }

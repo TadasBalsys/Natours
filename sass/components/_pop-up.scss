@@ -12,7 +12,7 @@
 
   &__content {
     @include center-vertical-horizontal;
-    transform: translate(-50%, -50%) scale(.2);
+    transform: translate(-50%, -50%) scale(0.2);
     width: 60%;
     background-color: $color-white;
     box-shadow: 0 2rem 4rem rgba($color-black, $alpha: 0.2);
@@ -22,12 +22,28 @@
     // overflow: hidden;
     // opacity: 0;
     transition: all 0.3s 0.2s;
-    // z-index: 222;
+
+    @include respond-to('tab-land') {
+      width: 80%;
+    }
+
+    @include respond-to('phone') {
+      display: block;
+    }
   }
 
   &__left {
     width: 33.33333%;
     display: table-cell;
+
+    @include respond-to('tab-port') {
+      vertical-align: middle;
+    }
+
+    @include respond-to('phone') {
+       display: flex;
+      width: 50%;
+    }
   }
 
   &__right {
@@ -35,6 +51,11 @@
     display: table-cell;
     vertical-align: middle;
     padding: 3rem 5rem;
+
+    @include respond-to('phone') {
+      width: 50%;
+      padding: 2rem 3rem;
+    }
   }
 
   &__image {
@@ -48,6 +69,10 @@
     -webkit-column-gap: 4rem;
     column-gap: 4rem;
     column-rule: 1px solid $color-grey-light-2;
+
+    @include respond-to('phone') {
+      column-count: 1;
+    }
   }
 
   // Opens pop-up
@@ -60,7 +85,15 @@
     // opacity: 1;
     transform: translate(-50%, -50%) scale(1);
   }
-  
+
+  &__btn {
+    margin-top: 3rem;
+
+    @include respond-to('phone') {
+      text-align: center;
+    }
+  }
+
   &__close {
     &:link,
     &:visited {

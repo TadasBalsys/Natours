@@ -21,7 +21,13 @@
 .u-mt-large {
   margin-top: 10rem !important;
 
+  @include respond-to('tab-land') {
+    margin-top: 2rem !important;
+  }
   @include respond-to('tab-port') {
-    margin-top: 6rem !important;
+    margin-top: 2rem !important;
+  }
+  @include respond-to('phone') {
+    margin-top: 2rem !important;
   }
 }

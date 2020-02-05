@@ -14,6 +14,10 @@
     background: linear-gradient(to right, $color-primary-light, $color-primary-dark);
     -webkit-background-clip: text;
     color: transparent;
+
+    @include respond-to('tab-port') {
+      margin-bottom: 0;
+    }
   }
 
   &:hover{

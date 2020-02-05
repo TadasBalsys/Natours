@@ -14,6 +14,11 @@
   /* father element .header must have position:relative then children elements can use position: absolute */
   position: relative;
 
+  @include respond-to('phone') {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 88vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 88h, 0 100%);
+  }
+
   &__logo-box {
     position: absolute;
     top: 4rem;
@@ -22,7 +27,6 @@
   &__logo {
     height: 3.5rem;
   }
-
 
   &__text-box {
     /* this css rules place heading-box element in center */

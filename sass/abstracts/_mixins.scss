@@ -22,7 +22,10 @@
   1800px and bigger:  Larger Desktops
 
   1em = 16px
-*/
+
+  Order: Base + typography > general + grid > page layout > components 
+
+  */
 
 $breakpoints: (
   'phone': 37.5em,

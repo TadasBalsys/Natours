@@ -21,8 +21,17 @@ html {
   @include respond-to('tab-port') {
     font-size: 50%; // 1rem = 8px; 8/16= 50%
   }
+
+  @include respond-to('phone') {
+    font-size: 40.625%; // 1rem = 6.5px; 6.5/16= 50%
+  }
 }
 
 body {
   box-sizing: border-box;
+  padding: 3rem;
+
+  @include respond-to('tab-land') {
+    padding: 0;
+  }
 }

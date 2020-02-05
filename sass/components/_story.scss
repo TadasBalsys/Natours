@@ -8,6 +8,12 @@
   font-size: $default-font-size;
   transform: skewX(-12deg);
 
+  @include respond-to('phone') {
+    width: 90%;
+    transform: skew(0);
+    padding: 5rem 5rem 5rem 7rem;
+  }
+
   &__shape {
     width: 15rem;
     height: 15rem;
@@ -19,6 +25,10 @@
     transform: translateX(-3rem) skewX(12.01deg);
     position: relative;
     overflow: hidden;
+
+    @include respond-to('phone') {
+      transform: translateX(-3rem) skewX(0);
+    }
   }
 
   &__image {
@@ -30,6 +40,10 @@
 
   &__text-box {
     transform: skewX(12.01deg);
+
+    @include respond-to('phone') {
+      transform: skew(0);
+    }
   }
 
   &__text {

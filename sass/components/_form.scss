@@ -2,6 +2,18 @@
   &__group:not(:last-child) {
     margin-bottom: 3rem;
     // position: relative;
+
+    @include respond-to('phone') {
+      &:nth-child(3){
+        text-align: center;
+      }
+    }
+  }
+ 
+  &__group:last-child{
+    @include respond-to('phone') {
+      text-align: center;
+    }
   }
 
   &__input {
@@ -16,6 +28,10 @@
     width: 90%;
     display: block;
     transition: all 0.3s;
+
+    @include respond-to('phone') {
+      margin: 0 auto;
+    }
 
     &:focus {
       outline: none;
@@ -41,7 +57,7 @@
     display: block;
     transition: all 0.3s;
   }
-  
+
   &__input:placeholder-shown + &__label {
     opacity: 0;
     visibility: hidden;
@@ -88,5 +104,11 @@
 
   &__radio-input:checked + &__radio-label &__radio-bottom:after {
     opacity: 1;
+  }
+
+  &__btn {
+    @include respond-to('phone') {
+      text-align: center;
+    }
   }
 }
